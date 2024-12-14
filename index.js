@@ -6,7 +6,7 @@ const guestRoutes = require('./routes/guestRoutes');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3001; 
+const PORT = process.env.PORT || 8080; 
 app.options('*', cors());
 
 app.use(cors({
@@ -17,13 +17,13 @@ app.use(cors({
 
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on https://airim6.pythonanywhere.com:${PORT}`);
 });
 
 app.use(express.json());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-console.log(`Swagger Docs available at http://localhost:${PORT}/api-docs`);
+console.log(`Swagger Docs available at https://airim6.pythonanywhere.com:${PORT}/api-docs`);
 
 console.log(new Date().toLocaleDateString());
 
@@ -37,5 +37,5 @@ mongoose.connect('mongodb+srv://dintsamaly:dItjM6IlcziV73Bd@monar.yew0p.mongodb.
 app.use('', guestRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on https://airim6.pythonanywhere.com:${PORT}`);
 });
