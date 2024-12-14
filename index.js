@@ -6,11 +6,11 @@ const guestRoutes = require('./routes/guestRoutes');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 8000; 
+const PORT = process.env.PORT || 3001; 
 app.options('*', cors());
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 })); 
