@@ -6,19 +6,14 @@ const guestRoutes = require('./routes/guestRoutes');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 8080; 
+const PORT = 3000;
 app.options('*', cors());
 
 app.use(cors({
-  origin: '*',
+  origin: 'https://airim6.pythonanywhere.com:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-})); 
-
-
-app.listen(PORT, 'https://airim6.pythonanywhere.com', () => {
-  console.log(`Server running on https://airim6.pythonanywhere.com:${PORT}`);
-});
+}));
 
 app.use(express.json());
 
