@@ -16,7 +16,7 @@ app.use(cors({
 })); 
 
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, 'https://airim6.pythonanywhere.com', () => {
   console.log(`Server running on https://airim6.pythonanywhere.com:${PORT}`);
 });
 
